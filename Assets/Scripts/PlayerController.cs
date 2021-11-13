@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Puede saltar nuevamente");
             playerAudio.PlayOneShot(jumpAudio, 1.0f);
         }
-        else if (other.gameObject.CompareTag("Obstacle"))
+        else if (other.gameObject)
         {
             gameOver = true;
             Debug.Log("Juego Terminado");

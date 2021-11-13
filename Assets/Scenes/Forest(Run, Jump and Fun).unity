@@ -310,7 +310,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 834bc99524a174a378e982623582c06d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d70999ba737574c808b1d37cbdca0c37, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -841,6 +841,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17859c3336c0e57489485a72fee043bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstaclesPrefabs:
+  - {fileID: 4511517156743524301, guid: abfd422a4a6518f4c8005dab0cfe0027, type: 3}
+  - {fileID: 1382806457179411208, guid: 1e6251d407f0c6143becfae79640b097, type: 3}
+  - {fileID: 6516072524664701667, guid: fba82052e11492c418fb6a6e55f0d031, type: 3}
+  - {fileID: 9205784658319353850, guid: 8e6a2b300737bec47874671e23d2a687, type: 3}
+  - {fileID: 5328716883634689779, guid: dbee59e51e7e7f44da8e79950b0447bc, type: 3}
+  - {fileID: 6130656586632008532, guid: fce507698c999714588445d268d2ea29, type: 3}
+  - {fileID: 3450502768073766967, guid: f29f90e62e42e984d87ed7960de21702, type: 3}
+  - {fileID: 7963921748227846873, guid: dabf0d805c11d6e419d8ee00a0959703, type: 3}
   obstaculoPrefab: {fileID: 4511517156743524301, guid: abfd422a4a6518f4c8005dab0cfe0027, type: 3}
 --- !u!4 &1553906109
 Transform:
