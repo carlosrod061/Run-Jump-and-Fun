@@ -22,10 +22,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpAudio;
     public AudioClip crashAudio;
     public AudioSource playerAudio;
-
+    private GameManager gameManager;
+    public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
         animator = GetComponent<Animator>();
@@ -48,7 +50,10 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
             animator.SetTrigger("Jump_trig");
         }
-
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
 
     }
 
@@ -64,12 +69,13 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject)
         {
             gameOver = true;
-            Debug.Log("Juego Terminado");
+
             animator.SetBool("Death_b", true);
             animator.SetInteger("DeathType_int", 1);
             explosion.Play();
             escape.Stop();
             playerAudio.PlayOneShot(crashAudio, 1.0f);
+            gameManager.GameOver();
         }
 
         isOnGround = true;
