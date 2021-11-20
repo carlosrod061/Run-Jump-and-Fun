@@ -32,27 +32,31 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
         animator = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
+        jumpForce = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        if (transform.position.z > -13 && transform.position.z < 13)
+        if (gameManager.isGameActive)
         {
-            transform.Translate(Vector3.right * Time.deltaTime * 20 * horizontalInput);
-        }
+            horizontalInput = Input.GetAxis("Horizontal");
+            if (transform.position.z > -13 && transform.position.z < 13)
+            {
+                transform.Translate(Vector3.right * Time.deltaTime * 20 * horizontalInput);
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
-        {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+            {
+                playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
-            isOnGround = false;
-            animator.SetTrigger("Jump_trig");
-        }
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+                isOnGround = false;
+                animator.SetTrigger("Jump_trig");
+            }
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            }
         }
 
     }

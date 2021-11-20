@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2407203800435337369}
   - component: {fileID: 8860029679736355548}
   - component: {fileID: -8160838754652732213}
+  - component: {fileID: 874430141091405043}
+  - component: {fileID: 1301710007506014911}
   m_Layer: 0
   m_Name: WeaponApple
   m_TagString: Untagged
@@ -96,6 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  explosion: {fileID: 15085447402717889, guid: 743ce290c74ae49c19aa3f128322fc7e, type: 3}
+  crashAudio: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
+  playerAudio: {fileID: 0}
+  pointValue: 0
 --- !u!114 &-8160838754652732213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,3 +114,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345c8222e5964c64baf032bc6ea9052b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &874430141091405043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407203800433113007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32699585, y: 0.32699984, z: 0.32700062}
+  m_Center: {x: 0, y: 0.16349992, z: 0}
+--- !u!54 &1301710007506014911
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407203800433113007}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
